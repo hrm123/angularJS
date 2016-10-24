@@ -1,9 +1,74 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="sylesheet" href="node_modules/angular-material/angular-material.css"
+        
+        <link rel="sylesheet" href="node_modules/angular-material/angular-material.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <style>
+            .header md-toolbar md-icon.md-default-theme {
+            color: white; }
+    </style>
     </head>
-    <body ng-app="BloggerApp">
+    <body ng-app="BloggerApp" layout="column">
+    <md-toolbar>
+      <div class="md-toolbar-tools" ng-hide="showSearchBarDiv">
+        <md-button class="md-icon-button" aria-label="Icon">
+          <md-tooltip>Icon</md-tooltip>
+          <md-icon class="md-default-theme" md-svg-icon="fb.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Blogzilla</span>
+        </h2>
+        <md-input-container md-no-float class="md-accent" flex="50" style="padding-bottom:0px;margin-left:25px" show-gt-md hide-sm hide-md>
+           <md-icon style="color:wheat" class="material-icons">&#xE8B6;</md-icon>
+           <input ng-model="searchInput" placeholder="Search here" style="color:wheat;padding-left:25px;margin-left:5px">
+        </md-input-container>
+        <span flex></span>
+        <md-button class="md-icon-button" hide-gt-md show-sm show-md ng-click="showSearchBarDiv = true">
+          <md-tooltip>Search</md-tooltip>
+          <img src="search.png" style="width:24px;height:24px;"/>
+        </md-button>
+        <md-button class="md-icon-button" show-gt-sm hide-sm>
+          <md-tooltip>Add Blog</md-tooltip>
+          <img src="pen.png" style="width:24px;height:24px;"/>
+        </md-button>
+        <md-button class="md-icon-button" show-gt-sm hide-sm>
+          <md-tooltip>Messages</md-tooltip>
+          <img src="messages.png" style="width:24px;height:24px;"/>
+        </md-button>
+        <md-button class="md-icon-button" show-gt-sm hide-sm>
+          <md-tooltip>User</md-tooltip>
+          <img src="user.png" style="width:24px;height:24px;"/>
+        </md-button>
+        <md-button class="md-icon-button" show-gt-sm hide-sm>
+          <md-tooltip>Settings</md-tooltip>
+          <img src="settings.png" style="width:24px;height:24px;"/>
+        </md-button>
+        <md-button class="md-icon-button" hide-gt-sm show-sm>
+          <md-tooltip>Menu</md-tooltip>
+          <img src="menu.png" style="width:24px;height:24px;"/>
+        </md-button>
+      </div>
+      <div layout="row" class="md-toolbar-tools" show-sm show-md hide-gt-md ng-show="showSearchBarDiv">
+        <md-button class="md-icon-button" ng-click="showSearchBarDiv = false">
+          <img src="back.png" style="width:24px;height:24px;"/>
+        </md-button>
+        <md-input-container flex="80" md-no-float class="md-accent" style="padding-bottom:0px;">
+           <md-icon style="color:wheat" class="material-icons">&#xE8B6;</md-icon>
+           <input ng-model="searchInput" placeholder="Search here" style="color:wheat;padding-left:25px;margin-left:5px">
+        </md-input-container>
+        <span flex></span>
+        <md-button class="md-icon-button">
+          <img src="search.png" style="width:24px;height:24px;"/>
+        </md-button>
+      </div>
+     </md-toolbar>
+
+        <div class="container" layout="row" flex>
+            <md-content id='content' flex>
+                Hello!
+            </md-content>
+        </div>
         
         <script src="node_modules/angular/angular.min.js"></script>
         <script src="node_modules/angular-animate/angular-animate.js"></script>
