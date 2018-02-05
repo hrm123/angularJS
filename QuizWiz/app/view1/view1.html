@@ -1,1 +1,24 @@
-<p>This is the partial for view 1.</p>
+<wizard on-finish="finishedWizard()" on-cancel="cancelledWizard()">
+    <wz-step wz-title="Starting">
+        <h1>Step 1</h1>
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-5">Enter your email:</div>
+            <div class="col-xs-7"><input type="text" ng-model="email"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4"><input type="submit" wz-next value="Continue" /></div>
+            </div>
+        </div>
+    </wz-step>
+    <wz-step wz-title="Continuing">
+        <h1>Continuing</h1>
+        <p>You have continued here!</p>
+        <input type="submit" wz-next value="Go on" />
+    </wz-step>
+    <wz-step wz-title="More steps">
+        <p>Even more steps!!</p>
+        <input type="submit" wz-next value="Finish now" />
+    </wz-step>
+</wizard>
