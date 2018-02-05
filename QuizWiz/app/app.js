@@ -1,15 +1,51 @@
-'use strict';
+(function() {
+    'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version',
-  'mgo-angular-wizard'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+    // Creating our angular app and inject ui-router
+    // =============================================================================
+    var app = angular.module('wizardApp', ['ui.router']);
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+    // Configuring our states
+    // =============================================================================
+    app.config(['$stateProvider', '$urlRouterProvider',
+
+        function($stateProvider, $urlRouterProvider) {
+
+            // For any unmatched url, redirect to /wizard/personal
+            $urlRouterProvider.otherwise('/quizwiz/home');
+
+            $stateProvider
+            // PARENT STATE: form state
+                .state('form', {
+                    url: '/quizwiz',
+                    component: 'formComponent'
+                })
+
+                // NESTED STATES: child states of 'form' state
+                // URL will become '/form/personal'
+                .state('form.personal', {
+                    url: '/home',
+                    component: 'personalComponent'
+                })
+
+                // URL will become /form/work
+                .state('form.work', {
+                    url: '/work',
+                    component: 'workComponent'
+                })
+
+                // URL will become /form/address
+                .state('form.address', {
+                    url: '/address',
+                    component: 'addressComponent'
+                })
+
+                // URL will become /form/result
+                .state('form.result', {
+                    url: '/result',
+                    component: 'resultComponent'
+                })
+        }
+    ]);
+
+})();
