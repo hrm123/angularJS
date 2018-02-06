@@ -14,15 +14,20 @@
         var vm = this;
         vm.title = 'Thanks for staying tuned!';
         vm.formData = {};
-        debugger;
+
         vm.$onInit = activate;
-
+        vm.stepData = DataProviderSvc.getStepData(DataProviderSvc.getStepID());
         ////////////////
-
+        console.log(vm.stepData);
         function activate() {
             // get data from the parent component
             vm.formData = vm.parent.getData();
             console.log('Result feature loaded!');
+        }
+
+        vm.updateAnswer = function(qid, aid)
+        {
+
         }
     }
 })();
