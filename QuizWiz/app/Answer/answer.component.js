@@ -1,22 +1,22 @@
 /**
- * Created by Ramm on 2/5/2018.
+ * Created by Ramm on 2/6/2018.
  */
 (function () {
     'use strict';
 
     angular
         .module('wizardApp')
-        .component('question', {
-            templateUrl:  'Question/question.html',
-            controller: 'questionController',
-            controllerAs: 'quesCtrl',
+        .component('answer', {
+            templateUrl:  'Answer/answer.html',
+            controller: 'answerController',
+            controllerAs: 'answerCtrl',
             require: {
                 // access to the functionality of the parent component called 'formComponent'
-                parent: '^questionList'
+                parent: '^question'
             },
             bindings: {
                 // send a changeset of 'formData' upwards to the parent component called 'formComponent'
-                ques: '<'
+                ans: '<'
             }
         })
 })();
