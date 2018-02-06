@@ -5,14 +5,13 @@
     "use strict";
 
     angular.module('wizardApp')
-        .service('DataProviderSvc', DataProviderService);
+        .service('dataProviderSvc', DataProviderService);
 
 
     DataProviderService.$inject = ['$http'];
 
     function DataProviderService($http) {
         var service = this;
-
         var stepsData =
             [
                 [],
@@ -71,7 +70,18 @@
         var sampleStore = {
             email: '',
             stepsData: stepsData,
-            totalSteps: 6
+            totalSteps: 6,
+            currentStepId : 0 // o based index
+        };
+
+        service.getStepID = function(){
+            return sampleStore.currentStepId;
+        };
+
+        service.setStepID = function(stepId){
+            if(stepId>=0 && stepId<= sampleStore.totalSteps) {
+                sampleStore.currentStepId = stepId;
+            }
         };
 
         service.getEmail = function () {
@@ -88,8 +98,26 @@
 
         };
 
-        service.updateUserAnswer = function (qid, aid) {
+        service.ChangeCurrentStepId = function(change)
+        {
+            //TODO: Verify change is a integer
+            var newStepId = sampleStore.currentStepId + change;
+            if(newStepId>=0 && newStepId<= sampleStore.totalSteps) {
+                sampleStore.currentStepId = newStepId;
+            }
+            return sampleStore.stepsData[newStepId];
+        }
 
+        service.updateUserAnswer = function (qid, aid) {
+            var q = sampleStore.stepsData.forEach(
+                function(a) {
+                    a.find( function(sd) { return sd.id === qid;})
+                }
+            );
+            if(q)
+            {
+                q.userAnswer = aid;
+            }
         };
     };
 })();

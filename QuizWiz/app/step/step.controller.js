@@ -8,13 +8,13 @@
         .module('wizardApp')
         .controller('StepController', StepController);
 
-    StepController.$inject = ["$scope","$stateParams"];
+    StepController.$inject = ["$scope","$stateParams","dataProviderSvc"];
 
-    function StepController($scope, $stateParams, appData) {
+    function StepController($scope, $stateParams, DataProviderSvc) {
         var vm = this;
         vm.title = 'Thanks for staying tuned!';
         vm.formData = {};
-
+        debugger;
         vm.$onInit = activate;
 
         ////////////////
