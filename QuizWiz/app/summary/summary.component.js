@@ -7,7 +7,7 @@
     angular
         .module('wizardApp')
         .component('summaryComponent', {
-            templateUrl:  'work/summary.html',
+            templateUrl:  'summary/summary.html',
             controller: 'summaryController',
             controllerAs: 'vm',
             require: {
