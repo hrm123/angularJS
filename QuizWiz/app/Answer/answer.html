@@ -1,7 +1,10 @@
 <div className="row">
     <div className="col-sm-12" style="textAlign:left">
         <label>
-            <input type="radio"
+            <input type="radio" name="{{answerCtrl.groupid}}"
+                   ng-value="answerCtrl.ans"
+                   ng-model="answerCtrl.selectedAnswer"
+                   ng-change="answerCtrl.newValue(value)"
             />&nbsp;&nbsp;{{answerCtrl.ans}}</label>
     </div>
 </div>

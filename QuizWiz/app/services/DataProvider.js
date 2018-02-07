@@ -108,15 +108,24 @@
             return sampleStore.stepsData[newStepId];
         }
 
-        service.updateUserAnswer = function (qid, aid) {
-            var q = sampleStore.stepsData.forEach(
+        service.updateUserAnswer = function (qid, answer) {
+            var q;
+            var q1 = sampleStore.stepsData.find(
                 function(a) {
-                    a.find( function(sd) { return sd.id === qid;})
+                    a.find( function(sd) {
+                        console.log(sd.id);
+                        if(sd.id === qid){
+                            debugger;
+                            q = sd;
+                            return true;
+                        }
+                    })
                 }
-            );
+            );;
+            debugger;
             if(q)
             {
-                q.userAnswer = aid;
+                q.userAnswer = answer;
             }
         };
     };

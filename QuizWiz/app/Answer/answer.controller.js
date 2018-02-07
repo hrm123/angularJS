@@ -8,13 +8,24 @@
         .module('wizardApp')
         .controller('answerController', AnswerController);
 
-    AnswerController.$inject = [ ];
+    AnswerController.$inject = ["$scope" ];
 
-    function AnswerController() {
+    function AnswerController($scope) {
         var vm = this;
         vm.title = 'Thanks for staying tuned!';
         vm.formData = {};
-
+        vm.selectedAnswer = '';
         ////////////////
+
+        vm.newValue = function(value) {
+            console.log(value);
+            $scope.$emit('AnswerChanged',{qid: vm.groupid, a : vm.selectedAnswer});
+        }
+
+        vm.$onChanges = function (changes) {
+            if (changes.selectedAnswer) {
+
+            }
+        }
     }
 })();

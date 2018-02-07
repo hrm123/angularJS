@@ -25,6 +25,11 @@
             console.log('Result feature loaded!');
         }
 
+        $scope.$on('AnswerChanged', function(event, data){
+            debugger;
+            DataProviderSvc.updateUserAnswer(data.qid, data.a);
+        });
+
         vm.updateAnswer = function(qid, aid)
         {
 
