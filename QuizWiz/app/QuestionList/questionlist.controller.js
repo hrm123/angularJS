@@ -17,7 +17,6 @@
         var vm = this;
         vm.title = 'Thanks for staying tuned!';
         vm.formData = {};
-        debugger;
         console.log(vm.questions);
         ////////////////
     }

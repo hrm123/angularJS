@@ -18,6 +18,7 @@
         vm.$onInit = activate;
         vm.stepData = DataProviderSvc.getStepData(DataProviderSvc.getStepID());
         ////////////////
+        debugger;
         console.log(vm.stepData);
         function activate() {
             // get data from the parent component
@@ -26,7 +27,6 @@
         }
 
         $scope.$on('AnswerChanged', function(event, data){
-            debugger;
             DataProviderSvc.updateUserAnswer(data.qid, data.a);
         });
 

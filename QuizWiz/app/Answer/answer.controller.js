@@ -14,10 +14,14 @@
         var vm = this;
         vm.title = 'Thanks for staying tuned!';
         vm.formData = {};
-        debugger;
-        vm.selectedAnswer = vm.userAnswer;
-        ////////////////
+        vm.selected = '';
 
+
+        ////////////////
+        vm.$onInit = function(){
+            debugger;
+            vm.selectedAnswer = vm.useranswer;
+        }
         vm.newValue = function(value) {
             console.log(value);
             $scope.$emit('AnswerChanged',{qid: vm.groupid, a : vm.selectedAnswer});

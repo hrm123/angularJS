@@ -4,7 +4,7 @@
             <input type="radio" name="{{answerCtrl.groupid}}"
                    ng-value="answerCtrl.ans"
                    ng-model="answerCtrl.selectedAnswer"
-                   ng-change="answerCtrl.newValue(value)"
+                   ng-change="answerCtrl.newValue('{{answerCtrl.ans}}')"
             />&nbsp;&nbsp;{{answerCtrl.ans}}</label>
     </div>
 </div>

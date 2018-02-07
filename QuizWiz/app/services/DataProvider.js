@@ -115,14 +115,12 @@
                     a.find( function(sd) {
                         console.log(sd.id);
                         if(sd.id === qid){
-                            debugger;
                             q = sd;
                             return true;
                         }
                     })
                 }
             );;
-            debugger;
             if(q)
             {
                 q.userAnswer = answer;

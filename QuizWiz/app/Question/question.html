@@ -3,6 +3,7 @@
         <h1 className="App-title">{{quesCtrl.ques.question}}</h1>
     </div>
     <div className="row" ng-repeat="a in quesCtrl.ques.answers">
-        <answer ans="a" groupid="quesCtrl.ques.id" userAnswer="quesCtrl.ques.userAnswer"/>
+        <answer ans="a" groupid="quesCtrl.ques.id" useranswer="{{quesCtrl.ques.userAnswer}}"/>
+
     </div>
 </div>
