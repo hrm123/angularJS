@@ -28,8 +28,8 @@
         </div>
 
         <div class="form-group text-center space-20">
-            <a ui-sref="form.personal" ui-sref-opts="{location:false, stepsChanged : 1}" class="btn btn-outline-rounded btn-default"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</a>
-            <a ui-sref="form.address" ui-sref-opts="{location:false, stepsChanged : 1}" class="btn btn-outline-rounded btn-info"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></a>
+            <a ui-sref="form.step({ stepsChanged : -1})" ui-sref-opts="{location:false, stepsChanged : 1}" class="btn btn-outline-rounded btn-default"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</a>
+            <a ui-sref="form.result" ui-sref-opts="{location:false, stepsChanged : 1}" class="btn btn-outline-rounded btn-info"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></a>
         </div>
     </div>
 </div>

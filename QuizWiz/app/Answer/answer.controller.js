@@ -19,7 +19,6 @@
 
         ////////////////
         vm.$onInit = function(){
-            debugger;
             vm.selectedAnswer = vm.useranswer;
         }
         vm.newValue = function(value) {

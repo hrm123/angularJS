@@ -16,14 +16,18 @@
         vm.formData = {};
 
         vm.$onInit = activate;
-        vm.stepData = DataProviderSvc.getStepData(DataProviderSvc.getStepID());
+
         ////////////////
-        debugger;
-        console.log(vm.stepData);
+
         function activate() {
             // get data from the parent component
             vm.formData = vm.parent.getData();
             console.log('Result feature loaded!');
+            var currentStepId = DataProviderSvc.getStepID();
+            vm.stepData = DataProviderSvc.getStepData(currentStepId);
+            debugger;
+            vm.isfirstQuizStep = (currentStepId === 1);
+            vm.isfinalQuizStep = ( currentStepId === 3);
         }
 
         $scope.$on('AnswerChanged', function(event, data){

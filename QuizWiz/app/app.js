@@ -23,7 +23,7 @@
             .state('form.step', {
                 url: '/step',
                 component: 'stepComponent',
-                params:{stepsChanged:null},
+                params:{stepsChanged:null, stepNumber: null},
                 resolve: {
                     StepData: ['dataProviderSvc','$stateParams', function (DataProviderSvc, $stateParams) {
                         if($stateParams.stepsChanged) {

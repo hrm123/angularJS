@@ -94,6 +94,7 @@
 
         service.getStepData = function(stepId)
         {
+            debugger;
             return sampleStore.stepsData[stepId];
 
         };

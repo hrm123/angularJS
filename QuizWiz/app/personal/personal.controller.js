@@ -8,20 +8,24 @@
         .module('wizardApp')
         .controller('PersonalController', PersonalController);
 
-    PersonalController.$inject = [];
+    PersonalController.$inject = ["$stateParams","dataProviderSvc"];
 
-    function PersonalController() {
+    function PersonalController($stateParams, DataProviderSvc) {
         var vm = this;
         vm.title = 'Please tell us about yourself.';
         vm.formData = {};
 
         vm.$onInit = activate;
-
+        vm.saveEmail = function(){
+            DataProviderSvc.updateEmail(vm.formData.email);
+        }
         ////////////////
 
         function activate() {
             // get data from the parent component
             vm.formData = vm.parent.getData();
+            DataProviderSvc.setStepID(0);
+            vm.formData.email = DataProviderSvc.getEmail();
             console.log('Personal feature loaded!');
         }
 
