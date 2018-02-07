@@ -43,9 +43,9 @@
             })
 
             // URL will become /form/work
-            .state('form.work', {
-                url: '/work',
-                component: 'workComponent'
+            .state('form.summary', {
+                url: '/summary',
+                component: 'summaryComponent'
             })
 
             // URL will become /form/address

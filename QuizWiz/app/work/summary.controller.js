@@ -6,11 +6,11 @@
 
     angular
         .module('wizardApp')
-        .controller('WorkController', WorkController);
+        .controller('summaryController', SummaryController);
 
-    WorkController.$inject = ["$stateParams","dataProviderSvc"];
+    SummaryController.$inject = ["$stateParams","dataProviderSvc"];
 
-    function WorkController($stateParams,DataProviderSvc) {
+    function SummaryController($stateParams, DataProviderSvc) {
         var vm = this;
         vm.title = 'What do you do?';
         vm.formData = {};

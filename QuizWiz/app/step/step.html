@@ -8,7 +8,7 @@
         <a ng-show="!vm.isfirstQuizStep" ui-sref="form.step({stepsChanged : -1})"  ui-sref-opts="{location:false, reload:true, notify: true}" class="btn btn-outline-rounded btn-default"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</a>
         <a ng-show="vm.isfirstQuizStep" ui-sref="form.personal"  ui-sref-opts="{location:false, reload:true, notify: true}" class="btn btn-outline-rounded btn-default"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</a>
         <a ng-show="!vm.isfinalQuizStep" ui-sref="form.step({ stepsChanged : 1})" ui-sref-opts="{location:false, reload:true, notify: true}" class="btn btn-outline-rounded btn-info"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></a>
-        <a ng-show="vm.isfinalQuizStep" ui-sref="form.work" ui-sref-opts="{location:false}" class="btn btn-outline-rounded btn-info"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></a>
+        <a ng-show="vm.isfinalQuizStep" ui-sref="form.summary" ui-sref-opts="{location:false}" class="btn btn-outline-rounded btn-info"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></a>
     </div>
 
 </div>

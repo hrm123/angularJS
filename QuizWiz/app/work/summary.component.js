@@ -6,9 +6,9 @@
 
     angular
         .module('wizardApp')
-        .component('workComponent', {
-            templateUrl:  'work/work.html',
-            controller: 'WorkController',
+        .component('summaryComponent', {
+            templateUrl:  'work/summary.html',
+            controller: 'summaryController',
             controllerAs: 'vm',
             require: {
                 // access to the functionality of the parent component called 'formComponent'
