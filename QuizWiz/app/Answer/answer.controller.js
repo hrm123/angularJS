@@ -22,7 +22,6 @@
             vm.selectedAnswer = vm.useranswer;
         }
         vm.newValue = function(value) {
-            console.log(value);
             $scope.$emit('AnswerChanged',{qid: vm.groupid, a : vm.selectedAnswer});
         }
 

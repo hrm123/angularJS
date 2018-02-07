@@ -94,9 +94,23 @@
 
         service.getStepData = function(stepId)
         {
-            debugger;
+
             return sampleStore.stepsData[stepId];
 
+        };
+
+        service.getScore = function(){
+            var totalScore = 0;
+            sampleStore.stepsData.forEach(function(sd) {
+                sd.forEach(function(q){
+                    if(q.userAnswer) {
+                        var ind = q.answers.indexOf(q.userAnswer);
+                        totalScore += q.scores[ind];
+                    }
+                });
+            });
+
+          return totalScore;
         };
 
         service.ChangeCurrentStepId = function(change)
@@ -114,7 +128,6 @@
             var q1 = sampleStore.stepsData.find(
                 function(a) {
                     a.find( function(sd) {
-                        console.log(sd.id);
                         if(sd.id === qid){
                             q = sd;
                             return true;

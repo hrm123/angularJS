@@ -8,11 +8,11 @@
         .module('wizardApp')
         .controller('ResultController', ResultController);
 
-    ResultController.$inject = [];
+    ResultController.$inject = ["$stateParams","dataProviderSvc"];
 
-    function ResultController() {
+    function ResultController($stateParams,DataProviderSvc) {
         var vm = this;
-        vm.title = 'Thanks for staying tuned!';
+        vm.title = 'Thanks for taking the quiz!';
         vm.formData = {};
 
         vm.$onInit = activate;
@@ -22,7 +22,8 @@
         function activate() {
             // get data from the parent component
             vm.formData = vm.parent.getData();
-            console.log('Result feature loaded!');
+            vm.totalScore = DataProviderSvc.getScore();
+            vm.email = DataProviderSvc.getEmail();
         }
     }
 })();

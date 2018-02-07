@@ -26,7 +26,6 @@
             vm.formData = vm.parent.getData();
             DataProviderSvc.setStepID(0);
             vm.formData.email = DataProviderSvc.getEmail();
-            console.log('Personal feature loaded!');
         }
 
     }

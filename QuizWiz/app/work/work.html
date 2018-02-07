@@ -2,30 +2,9 @@
     <div class="form-horizontal">
         <h4 class="head text-center">{{vm.title}}</h4>
         <br/>
-        <div class='row'>
-            <div class='col-xs-offset-4 col-xs-10 col-sm-offset-5 col-sm-4'>
-                <div class="form-group">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="vm.formData.work" value="Design" checked>
-                            Design
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="vm.formData.work" value="Code">
-                            Code
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="vm.formData.work" value="Deploy">
-                            Deploy
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <ul>
+             <li ng-repeat="resp in vm.allResponses">{{resp.q}}-{{resp.a}}</li>
+         </ul>
 
         <div class="form-group text-center space-20">
             <a ui-sref="form.step({ stepsChanged : -1})" ui-sref-opts="{location:false, stepsChanged : 1}" class="btn btn-outline-rounded btn-default"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</a>

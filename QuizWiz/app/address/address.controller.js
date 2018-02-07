@@ -22,7 +22,6 @@
         function activate() {
             // get data from the parent component
             vm.formData = vm.parent.getData();
-            console.log('Address feature loaded!');
         }
     }
 })();
