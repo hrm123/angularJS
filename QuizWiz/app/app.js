@@ -12,7 +12,7 @@
 
     function StatesConfig($stateProvider, $urlRouterProvider){
 
-        $urlRouterProvider.otherwise('/quizwiz/step');
+        $urlRouterProvider.otherwise('/quizwiz/home');
 
         $stateProvider
         // PARENT STATE: form state
