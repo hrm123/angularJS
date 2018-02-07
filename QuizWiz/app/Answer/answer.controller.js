@@ -14,7 +14,8 @@
         var vm = this;
         vm.title = 'Thanks for staying tuned!';
         vm.formData = {};
-        vm.selectedAnswer = '';
+        debugger;
+        vm.selectedAnswer = vm.userAnswer;
         ////////////////
 
         vm.newValue = function(value) {

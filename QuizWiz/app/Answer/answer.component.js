@@ -17,7 +17,8 @@
             bindings: {
                 // send a changeset of 'formData' upwards to the parent component called 'formComponent'
                 ans: '<',
-                groupid: '<'
+                groupid: '<',
+                userAnswer: '<'
             }
         })
 })();

@@ -18,21 +18,22 @@
         // PARENT STATE: form state
             .state('form', {
                 url: '/quizwiz',
-                component: 'formComponent',
-                resolve: { StepData: ['dataProviderSvc','$stateParams', function (DataProviderSvc, $stateParams) {
-                    debugger;
-                    if($stateParams.stepsChanged) {
-                        return DataProviderSvc.ChangeCurrentStepId($stateParams.stepsChanged);
-                    }
-                    else{
-                        return DataProviderSvc.ChangeCurrentStepId(1); // step 1 data by default
-                    }
-                }]
-                }
+                component: 'formComponent'
             })
             .state('form.step', {
                 url: '/step',
-                component: 'stepComponent'
+                component: 'stepComponent',
+                params:{stepsChanged:null},
+                resolve: {
+                    StepData: ['dataProviderSvc','$stateParams', function (DataProviderSvc, $stateParams) {
+                        if($stateParams.stepsChanged) {
+                            return DataProviderSvc.ChangeCurrentStepId($stateParams.stepsChanged);
+                        }
+                        else{
+                            return DataProviderSvc.ChangeCurrentStepId(1); // step 1 data by default
+                        }
+                    }]
+                }
             })
             // NESTED STATES: child states of 'form' state
             // URL will become '/form/personal'
